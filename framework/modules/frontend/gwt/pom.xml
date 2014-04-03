@@ -180,7 +180,9 @@
 
 	<modules>
 		<module>api</module>
+<!-- Temporarily commented - Not working with GWT 2.6 Sencha 3.1.0b
 		<module>theme</module>
+-->
 	</modules>
 	
 </project>

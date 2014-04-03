@@ -227,11 +227,16 @@
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-spring3</artifactId>
-            <!-- Prepared for exclusions if needed...
+            <!-- Prepared for exclusions if needed -->
             <exclusions>
-
+                <!-- Bean Validator has to be excluded as GWT front ends add its own. Not a problem to build the projects
+                as the correct bean-validator was included but it has been a problem with GWT 2.6 as this
+                library was added to the IDE classpath and causing problems in dev mode -->
+                <exclusion>
+                    <artifactId>bean-validator</artifactId>
+                    <groupId>org.glassfish.hk2.external</groupId>
+                </exclusion>
             </exclusions>
-            -->
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
